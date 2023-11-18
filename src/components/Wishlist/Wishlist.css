@@ -1,0 +1,21 @@
+.wishlist-card .cross{
+    top: 4px;
+    right: -26px;
+    width: 25px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+.wishlist-card h5.title{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #1c1c1b;
+}
+
+.wishlist-card h6.price{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+}

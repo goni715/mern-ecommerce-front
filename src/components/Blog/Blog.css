@@ -1,0 +1,20 @@
+.blog-wrapper{
+    background-color: #f5f5f7;
+}
+
+.single-blog-card a{
+    font-size: 18px;
+    color: #777777;
+    margin-bottom: 20px;
+}
+
+.single-blog-card h3{
+    font-size: 24px;
+    font-weight: 600;
+    color: #1c1c1b;
+}
+
+.single-blog-card p{
+    color: #777777;
+    font-size: 14px;
+}
