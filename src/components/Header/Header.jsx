@@ -195,7 +195,12 @@ const Header = () => {
                                         <NavLink to={!getToken() ? "/login" : "/my-orders"}>My Orders</NavLink>
                                         <NavLink to="/blog">Blogs</NavLink>
                                         <NavLink to="/contact">Contact</NavLink>
-                                        <button onClick={handleLogout} className="border border-0 bg-transparent text-white text-uppercase">Logout</button>
+                                        {
+                                            getToken() && (
+                                                <button onClick={handleLogout} className="border border-0 bg-transparent text-white text-uppercase">Logout</button>
+                                            )
+                                        }
+
                                     </div>
                                 </div>
                             </div>
