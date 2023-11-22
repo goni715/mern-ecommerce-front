@@ -4,9 +4,12 @@ import {BiInfoCircle, BiPhoneCall} from "react-icons/bi";
 import Container from "../Container/Container";
 import {ErrorToast, IsEmail, IsEmpty, IsMobile} from "../../helper/ValidationHelper";
 import {CreateEnquiryRequest} from "../../ApiServices/EnquiryApiRequest";
+import {getToken} from "../../helper/SessionHelper.js";
+import {useNavigate} from "react-router-dom";
 
 const Contact = () => {
 
+    const navigate = useNavigate();
     let nameRef, emailRef, mobileRef, commentRef = useRef();
 
 
@@ -80,7 +83,7 @@ const Contact = () => {
                                         <textarea ref={(input)=>commentRef=input} className="form-control w-100" cols="30" rows="4" placeholder="Comments"></textarea>
                                     </div>
                                     <div>
-                                        <button onClick={Submit} className="button border-0">Submit</button>
+                                        <button onClick={()=>getToken() ? Submit() : navigate('/login')} className="button border-0">Submit</button>
                                     </div>
                                 </div>
                             </div>
