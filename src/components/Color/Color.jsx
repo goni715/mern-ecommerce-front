@@ -1,38 +1,36 @@
-import React from 'react';
+import React from "react";
 import store from "../../redux/store/store";
-import {SetCartProductColor} from "../../redux/state-slice/cartSlice";
+import { SetCartProductColor } from "../../redux/state-slice/cartSlice";
 
-const Color = ({colors}) => {
+const Color = ({ colors }) => {
+  const ClickHandle = (id) => {
+    store.dispatch(SetCartProductColor(id));
+  };
 
-
-    const ClickHandle = (id) => {
-        store.dispatch(SetCartProductColor(id));
-    }
-
-
-    return (
-        <>
-
-            <div>
-                <div>
-                    <ul className="colors ps-0">
-                        {
-                            colors.map((item,i)=>{
-                                return(
-                                    <>
-                                        <li key={i.toString()} onClick={ClickHandle.bind(this, item._id)} style={{background: item.ColorName}}> </li>
-                                    </>
-                                )
-                            })
-
-
-                        }
-
-                    </ul>
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div>
+        <div>
+          <ul className="colors ps-0">
+            {colors.map((item, i) => {
+              return (
+                <>
+                  <li
+                    key={i.toString()}
+                    className="cursor-pointer"
+                    onClick={ClickHandle.bind(this, item._id)}
+                    style={{ background: item.ColorName }}
+                  >
+                    {" "}
+                  </li>
+                </>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Color;
